@@ -15,6 +15,7 @@ import NodeInfo from './NodeInfo';
 import TemplateModule from './TemplateModule';
 import Transfer from './Transfer';
 import Upgrade from './Upgrade';
+import ERC20Transfer from './ERC20Transfer';
 
 function Main () {
   const [accountAddress, setAccountAddress] = useState(null);
@@ -61,19 +62,12 @@ function Main () {
             <BlockNumber />
             <BlockNumber finalized />
           </Grid.Row>
-          <Grid.Row stretched>
-            <Balances />
-          </Grid.Row>
           <Grid.Row>
-            <Transfer accountPair={accountPair} />
-            <Upgrade accountPair={accountPair} />
-          </Grid.Row>
-          <Grid.Row>
-            <Interactor accountPair={accountPair} />
+            <ERC20Transfer accountPair={accountPair} />
             <Events />
           </Grid.Row>
-          <Grid.Row>
-            <TemplateModule accountPair={accountPair} />
+          <Grid.Row stretched>
+            <Balances />
           </Grid.Row>
         </Grid>
       </Container>
